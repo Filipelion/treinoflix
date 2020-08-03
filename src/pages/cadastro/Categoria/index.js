@@ -30,11 +30,11 @@ function CadastroCategoria() {
   }
 
   useEffect(() => {
-    const URL_TOP = 'http://localhost:8080/categorias';
-    // window.location.hostname.includes('localhost')
-    //   ? 'http://localhost:8080/categorias'
-    //   : 'https://devsoutinhoflix.herokuapp.com/categorias';
-    // E a ju ama variáveis
+    const URL_TOP = window.location.hostname.includes('localhost')
+      ? 'http://localhost:8080/categorias'
+      : 'https://treinoflix.herokuapp.com/categorias';
+    // O back-end é localhost ou produção?
+    
     fetch(URL_TOP)
       .then(async (respostaDoServidor) => {
         const resposta = await respostaDoServidor.json();
